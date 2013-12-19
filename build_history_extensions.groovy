@@ -1,6 +1,6 @@
 //
 // Adds three icons to the Build History widget for each build.
-//   1. Clock icon with duration tooltip
+//   1. Clock icon with test duration tooltip (based on RSpec output "Finished in ...")
 //   2. Document icon with link to HTML report
 //   3. Info icon with link to environment SHA information
 //
