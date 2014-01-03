@@ -1,5 +1,5 @@
 //
-// Forces build status to UNSTABLE and re-executes if one of these conditions is met:
+// Forces build status to UNSTABLE if one of these conditions is met:
 //    1. PhantomJS produces an "unexpected response" error
 //    2. Chrome produces an "unreachable" error
 //
@@ -9,6 +9,5 @@ def phantom_error = manager.logContains('.*unexpected response, code=404, conten
 
 if (chrome_error || phantom_error) {
   manager.build.@result = hudson.model.Result.UNSTABLE
-  manager.build.run()
 }
 
