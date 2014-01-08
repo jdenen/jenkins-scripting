@@ -4,11 +4,11 @@
 //   2. Document icon with link to HTML report
 //   3. Info icon with link to environment SHA information
 //
-// Requires the htmlpublisher plugin archiving a report called 'Results'.
+// Requires the htmlpublisher plugin archiving a report with default name "HTML Report".
 //
 
 def regex = ( manager.build.project =~ /\[(.*)\]/ )
-def base = "${ manager.hudson.getRootUrl() }job/${ regex[0][1] }/${ manager.build.number }/Results"
+def base = "${ manager.hudson.getRootUrl() }job/${ regex[0][1] }/${ manager.build.number }/HTML_Report"
 
 manager.addBadge("/images/16x16/hourglass.gif", "Duration: ${ manager.getLogMatcher(".*Finished in (.*)\$").group(1) }")
 manager.addBadge("text.gif", "HTML Report", "$base")
